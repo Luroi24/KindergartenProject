@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/formulario.css">
+    <link rel="icon" href="./assets/images/logo-cendi.jpg">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/js.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a href="./index.html" class="navbar-brand">
+                    <img src="./assets/images/logo-cendi-removebg.png" alt="logo-cendi" class="d-inline-block align-text-top" width="30">
+                  <span class="navbar-brand mb-0 h1">CENDI</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="./formulario.html">Registro</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <form action="index.html" class="form shadow-lg" novalidate method="post" enctype="multipart/form-data" id="formulario-prin">
+        <h1 class="text-center">Registro 2022-2023</h1>
+            <!-- Barra de progreso -->
+            <div class="progressbar">
+                <div class="progress" id="progress"></div>  
+                <div class="progress-step progress-step-active" data-title="Básico"></div>
+                <div class="progress-step" data-title="Niña/Niño"></div>
+                <div class="progress-step" data-title="Derechohabiente"></div>
+                <div class="progress-step" data-title="Cónyuge"></div>
+                <div class="progress-step" data-title="Revision"></div>
+            </div>
+            <!-- Forms -->
+        <h1 id="revision" class="text-center d-none">Revisión</h1>
+        <div class="form-step form-step-active" id="form-datos-basicos">
+            <h2 class="text-center">Datos basicos</h2>
+            <div class="container">
+                <div class="input-group">
+                    <span class="input-group-text m-auto">Ciclo escolar</span>
+                    <input type="text" name="ciclo_escolar" id="ciclo_escolar" value="2022-2023" disabled="true" class="form-control">
+                </div>
+                <div class="form-floating">
+                    <select name="CENDI" id="CENDI" class="form-select needs-validation" required="required">
+                        <option selected disabled value="">Seleccione una opción</option>
+                        <option value="1">CENDI Amalia Solórzano de Cárdenas</option>
+                        <option value="2" disabled>CENDI Clementina Batalla de Bassols</option>
+                        <option value="3" disabled>CENDI Eva Sámano de López Mateos</option>
+                        <option value="4" disabled>CENDI Laura Pérez de Bátiz</option>
+                        <option value="5" disabled>CENDI Margarita Salazar de Erro</option>
+                    </select>
+                    <label for="CENDI">CENDI</label>
+                    <div class="invalid-feedback">Seleccione una opción</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="folio" id="folio" class="form-control needs-validation" maxlength="10" placeholder="Folio" required>
+                            <label for="folio">Folio</label>
+                            <div class="invalid-feedback" id="inv-fol"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <select name="grupo" id="grupo" class="form-select needs-validation" required="required">
+                                <option selected disabled value="">Seleccione una opción</option>
+                                <option value="1">Lac I - II</option>
+                                <option value="2">Lac III - Mat I</option>
+                                <option value="3">Mat IIA</option>
+                                <option value="4">Mat IIB</option>
+                                <option value="5">PIA y PIB</option>
+                                <option value="6">PIIA y PIIB</option>
+                                <option value="7">PIIIA y PIIIB</option>
+                            </select>
+                            <label for="grupo">Grupo</label>
+                            <div class="invalid-feedback" id="group-val">Seleccione una opción</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-group remove-on-check">
+                    <div></div>
+                    <a href="#" class="btn btn-nxt float-end me-0">Siguiente</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-step">
+            <h2 class="text-center">Datos del niño o de la niña</h2>
+            <div class="container">
+                <div class="text-center">
+                    <input type="file" name="kid_img" id="kid_img" accept="image/png" class="inpFile needs-validation d-none" required>
+                    <div class="image-preview m-auto" id="imagePreview">
+                        <img src="" alt="Foto" class="image-preview__image">
+                        <span class="image-preview__default-text">Foto</span>
+                    </div>
+                    <div class="imgTxt">Foto de la niña/niño</div>
+                    <div class="btns-group d-block remove-on-check">
+                        <label for="kid_img" class="btn mx-0">Selecciona una foto</label>
+                    </div>
+                    <div class="invalid-feedback">Seleccione una foto</div>
+                </div> 
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="kid_apellido_pat" id="kid_apellido_pat" placeholder="Apellido paterno" class="form-control needs-validation" required>
+                            <label for="kid_apellido_pat">Apellido paterno</label>
+                            <div class="invalid-feedback">Introduzca un apellido válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="kid_apellido_mat" id="kid_apellido_mat" placeholder="Apellido materno" class="form-control needs-validation" required>
+                            <label for="kid_apellido_mat">Apellido materno</label>
+                            <div class="invalid-feedback">Introduzca un apellido válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-floating">
+                        <input type="text" name="kid_nombres" id="kid_nombres" placeholder="Nombre(s)" class="form-control needs-validation" required>
+                        <label for="kid_nombres">Nombre(s)</label>
+                        <div class="invalid-feedback">Introduzca un nombre válido</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group">
+                        <span class="input-group-text m-auto mw-50">Fecha de nacimiento</span>
+                        <input type="date" name="kid_birthday" id="kid_birthday" onblur="calcularEdad()" class="form-control needs-validation" required>
+                        <div class="invalid-feedback">Introduzca la fecha de nacimiento</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-group" id="kid_age_field">
+                        <input type="number" name="kid_age" id="kid_age" disabled placeholder="Edad" class="form-control needs-validation">
+                        <span class="input-group-text m-auto mw-25">Años</span>
+                        <input type="number" name="kid_age_months" id="kid_age_months" disabled placeholder="Meses" class="form-control">
+                        <span class="input-group-text m-auto mw-25">Meses</span>
+                    </div>
+                    <div id="invalid-age" class="invalid-feedback">Debe de tener entre 6 meses y 6 años</div>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="kid_CURP" id="kid_CURP" placeholder="CURP" class="form-control needs-validation" maxlength=18 required>
+                    <label for="kid_CURP">CURP</label>
+                    <div class="invalid-feedback">Introduzca una CURP válida. Debe tener la forma AAAA000000BBBBBB--</div>
+                </div>
+                <div class="btns-group remove-on-check">
+                    <a href="#" class="btn btn-prev ms-0">Anterior</a>
+                    <a href="#" class="btn btn-nxt me-0">Siguiente</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-step">
+            <h2 class="text-center">Datos del o la derechohabiente</h2>
+            <div class="container">
+                <div class="text-center">
+                    <input type="file" name="der_img" id="der_img" accept="image/png" class="inpFile needs-validation d-none" required>
+                    <div class="image-preview m-auto" id="imagePreview2">
+                        <img src="" alt="Foto" class="image-preview__image">
+                        <span class="image-preview__default-text">Foto</span>
+                    </div>
+                    <div class="imgTxt">Foto del derechohabiente</div>
+                    <div class="btns-group d-block remove-on-check">
+                        <label for="der_img" class="btn mx-0">Selecciona una foto</label>
+                    </div>
+                    <div class="invalid-feedback">Seleccione una foto</div>
+                </div> 
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_apellido_pat" id="der_apellido_pat" placeholder="Apellido paterno" class="form-control needs-validation" required>
+                            <label for="der_apellido_pat">Apellido paterno</label>
+                            <div class="invalid-feedback">Introduzca un apellido válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_apellido_mat" id="der_apellido_mat" placeholder="Apellido materno" class="form-control needs-validation" required>
+                            <label for="der_apellido_mat">Apellido materno</label>
+                            <div class="invalid-feedback">Introduzca un apellido válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="der_nombres" id="der_nombres" placeholder="Nombre(s)" class="form-control needs-validation" required>
+                    <label for="der_nombres">Nombre(s)</label>
+                    <div class="invalid-feedback">Introduzca un nombre válido</div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-sm-4">
+                        <div class="form-floating">
+                            <input type="number" name="der_cp" id="der_cp" placeholder="Código postal" class="form-control needs-validation" required pattern=".{5,5}">
+                            <label for="der_cp">C.P</label>
+                            <div class="invalid-feedback">Introduzca un C.P válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="form-floating">
+                            <select name="der_entidad" id="der_entidad" class="form-select needs-validation" required="required">
+                                <option disabled selected value="">Seleccione una opción</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="CDMX">Ciudad de México</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Michoacán">Michoacán</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
+                            </select>
+                            <label for="der_entidad">Entidad</label>
+                            <div class="invalid-feedback">Introduzca una entidad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_alcaldia" id="der_alcaldia" placeholder="Alcaldia" class="form-control needs-validation" required>
+                            <label for="der_alcaldia">Alcaldia</label>
+                            <div class="invalid-feedback">Introduzca una alcaldía</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_colonia" id="der_colonia" placeholder="Colonia" class="form-control needs-validation" required>
+                            <label for="der_colonia">Colonia</label>
+                            <div class="invalid-feedback">Introduzca una colonia</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_calle" id="der_calle" placeholder="Calle" class="form-control needs-validation" required>
+                            <label for="der_calle">Calle</label>
+                            <div class="invalid-feedback">Introduzca una calle válida</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <div class="form-floating">
+                            <input type="number" name="der_numExt" id="der_numExt" placeholder="Núm Ext" class="form-control needs-validation" required>
+                            <label for="der_numExt">Núm. ext</label>
+                            <div class="invalid-feedback">Introduzca un número válido</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <div class="form-floating">
+                            <input type="text" name="der_numInt" id="der_numInt" placeholder="Núm. Int" class="form-control needs-validation">
+                            <label for="der_numInt">Núm. int</label>
+                            <div class="invalid-feedback">Introduzca un número válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="tel" name="der_tel_fijo" id="der_tel_fijo" placeholder="Tel. Fijo" class="form-control needs-validation" maxlength="10" pattern="[0-9]{10}">
+                            <label for="der_tel_fijo">Tel. fijo</label>
+                            <div class="invalid-feedback">Introduzca un número telefónico de 10 dígitos</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="tel" name="der_tel_celular" id="der_tel_celular" placeholder="Tel. Celular" class="form-control needs-validation" maxlength="10" required pattern="[0-9]{10}">
+                            <label for="der_tel_celular">Tel. celular</label>
+                            <div class="invalid-feedback">Introduzca un número telefónico de 10 dígitos</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating border-bottom">
+                    <input type="email" name="der_email" id="der_email" placeholder="Correo electrónico" class="form-control needs-validation" required>
+                    <label for="der_email">Correo electrónico</label>
+                    <div class="invalid-feedback">Introduzca una dirección de correo válida</div>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="der_CURP" id="der_CURP" placeholder="CURP" class="form-control needs-validation" maxlength="18" required>
+                    <label for="der_CURP">CURP</label>
+                    <div class="invalid-feedback">Introduzca una CURP válida. Debe tener la forma AAAA000000BBBBBB--</div>
+                </div>
+                <div class="row ">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <select name="der_opcupacion" id="der_ocupacion" class="form-select needs-validation" required="required">
+                            <option selected disabled value="">Seleccione una opción</option>
+                            <option value="1">Docente</option>
+                            <option value="2">PAEE</option>
+                            <option value="3">Funcionario(a)</option>
+                            </select>
+                            <label for="der_ocupacion">Ocupación</label>
+                            <div class="invalid-feedback">Seleccione una opción</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_plaza" id="der_plaza" placeholder="Nombre de la plaza o puesto" class="form-control needs-validation" required>
+                            <label for="der_plaza">Plaza o puesto</label>
+                            <div class="invalid-feedback">Introduzca un elemento válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="number" name="der_sueldo" id="der_sueldo" placeholder="Sueldo mensual (MXN)" class="form-control needs-validation" required>
+                            <label for="der_suelo">Sueldo mensual (MXN)</label>
+                            <div class="invalid-feedback">Introduzca un número válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="number" name="der_numEmpleado" id="der_numEmpleado" placeholder="Número de empleado" class="form-control needs-validation" required pattern=".{5,7}">
+                            <label for="der_numEmpleado">Número de empleado</label>
+                            <div class="invalid-feedback">Introduzca un número válido (5-7 dígitos)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <select name="der_adscripcion" id="der_adscripcion" class="form-select needs-validation" required="required">
+                        <option disabled selected value="">Seleccione una opción</option>
+                        <option value="1">CECyT 1 "Gonzalo Vazques Vela"</option>
+                        <option value="2">CECyT 2 "Miguel Bernard"</option>
+                        <option value="3">CECyT 3 "Estanislao Ramírez Ruiz"</option>
+                        <option value="4">CECyT 4 "Lázaro Cárdenas"</option>
+                        <option value="5">CECyT 5 "Benito Juárez"</option>
+                        <option value="6">CECyT 6 "Miguel Othon de Mendizabal"</option>
+                        <option value="7">CECyT 7 "Cuahutemoc"</option>
+                        <option value="8">CECyT 8 "Narcisso Bassols"</option>
+                        <option value="9">CECyT 9 "Juan de Dios Bátiz"</option>
+                        <option value="10">CECyT 10 "Carlos Vallejo Marquez"</option>
+                        <option value="11">CECyT 11 "Wilfrido Massieu"</option>
+                        <option value="12">CECyT 12 "José María Morelos"</option>
+                        <option value="13">CECyT 13 "Ricardo Flores Magón"</option>
+                        <option value="14">CECyT 14 "Luis Enrique Erro"</option>
+                        <option value="15">CECyT 15 "Diodoro Antunez Echegaray"</option>
+                        <option value="16">CECyT 16 "Hidalgo"</option>
+                        <option value="17">CECyT 17 "León, Guanajuato"</option>
+                        <option value="18">CECyT 18 "Zacatecas"</option>
+                        <option value="19">CECyT 19 "Leona Vicario"</option>
+                        <option value="20">CET 1 "Walter Cross Buchanan"</option>
+                        <option value="21">CICS Milpa Alta</option>
+                        <option value="22">CICS UST</option>
+                        <option value="23">ENCB</option>
+                        <option value="24">ENMH</option>
+                        <option value="25">ESCA Santo Tomás</option>
+                        <option value="26">ESCA Tepepan</option>
+                        <option value="27">ESCOM</option>
+                        <option value="28">ESE</option>
+                        <option value="29">ESEO</option>
+                        <option value="30">ESFM</option>
+                        <option value="31">ESIA Tecamachalco</option>
+                        <option value="32">ESIA Ticomán</option>
+                        <option value="33">ESIA-Zac</option>
+                        <option value="34">ESIME Azcapotzalco</option>
+                        <option value="35">ESIME Culhuacan</option>
+                        <option value="36">ESIME Ticomán</option>
+                        <option value="37">ESIME Zacatenco</option>
+                        <option value="38">ESIQIE</option>
+                        <option value="39">ESIT</option>
+                        <option value="40">ESM</option>
+                        <option value="41">EST</option>
+                        <option value="42">UPIBI</option>
+                        <option value="43">UPIICSA</option>
+                        <option value="44">UPIIG</option>
+                        <option value="45">UPIITA</option>
+                        <option value="46">UPIIZ</option>
+                        <option value="47">ENBA</option>
+                        <option value="48">UPIIH</option>
+                        <option value="49">UPIIP</option>
+                        <option value="50">UPIIC</option>
+                        <option value="51">UPITEM</option>
+                        <option value="52">UPIIT</option>
+                        <option value="53">Área Central</option>
+                    </select>
+                    <label for="der_adscripcion">Adscripción</label>
+                    <div class="invalid-feedback">Seleccione una opción</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_jefe" id="der_jefe" class="form-control needs-validation" placeholder="Nombre jefe" required>
+                            <label for="der_jefe">Nombre jefe</label>
+                            <div class="invalid-feedback">Introduzca un nombre válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="der_jefe_puesto" id="der_jefe_puesto" class="form-control needs-validation" placeholder="Puesto jefe" required>
+                            <label for="der_jefe_puesto">Puesto jefe</label>
+                            <div class="invalid-feedback">Introduzca un nombre válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <select name="der_horario" id="der_horario" class="form-select needs-validation" required="required">
+                                <option selected disabled value="">Seleccione una opción</option>
+                                <option value="1">7:00 - 15:00</option>
+                                <option value="2">8:00 - 15:00</option>
+                                <option value="3">7:00 - 14:00</option>
+                            </select>
+                            <label for="der_horario">Horario</label>
+                            <div class="invalid-feedback">Seleccione una opción</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="number" name="der_extension" id="der_extension" placeholder="Extensión" class="form-control needs-validation" required>
+                            <label for="der_extension">Extensión</label>
+                            <div class="invalid-feedback">Introduzca un número válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row hide-on-revision">
+                    <div class="col-sm-6 m-auto">
+                        <span class="input-group-text">¿Desea agregar a una persona responsable?</span>
+                    </div>
+                    <div id="radiobtns" class="col-sm-6 btns-group">
+                        <div class="m-auto">
+                            <input class="form-check-input" type="radio" name="der_resp" id="der_resp_si" onchange="showResponsible()">
+                            <label class="form-check-label" for="der_resp_si">Sí</label>
+                        </div>
+                        <div class="m-auto">
+                            <input class="form-check-input" type="radio" name="der_resp" id="der_resp_no" checked onchange="showResponsible()">
+                            <label class="form-check-label" for="der_resp_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center d-none" id="resp_hide">
+                    <input type="file" name="resp_img" id="resp_img" accept="image/png" class="inpFile needs-validation d-none" required>
+                    <div class="image-preview m-auto" id="imagePreview">
+                        <img src="" alt="Foto" class="image-preview__image">
+                        <span class="image-preview__default-text">Foto</span>
+                    </div>
+                    <div class="imgTxt">Foto del responsable</div>
+                    <div class="btns-group d-block remove-on-check">
+                        <label for="resp_img" class="btn mx-0">Selecciona una foto</label>
+                    </div>
+                    <div class="invalid-feedback">Seleccione una foto</div>
+                </div> 
+                <div class="row hide-on-revision">
+                    <div class="col-sm-6 m-auto">
+                        <span class="input-group-text">¿Tiene cónyuge?</span>
+                    </div>
+                    <div id="radiobtns" class="col-sm-6 btns-group">
+                        <div class="m-auto">
+                            <input class="form-check-input" type="radio" name="der_conyuge" id="der_cony_si" checked>
+                            <label class="form-check-label" for="der_cony_si">Sí</label>
+                        </div>
+                        <div class="m-auto">
+                            <input class="form-check-input" type="radio" name="der_conyuge" id="der_cony_no">
+                            <label class="form-check-label" for="der_cony_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-group remove-on-check">
+                    <a href="#" class="btn btn-prev ms-0">Anterior</a>
+                    <a href="#" class="btn btn-nxt me-0">Siguiente</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="conyuge" class="form-step">
+            <h2 class="text-center">Datos del cónyuge</h2>
+            <div class="container">
+                <div class="text-center">
+                    <input type="file" name="cony_img" id="cony_img" accept="image/png" class="inpFile needs-validation d-none" required>
+                    <div class="image-preview m-auto" id="imagePreview3">
+                        <img src="" alt="Foto" class="image-preview__image">
+                        <span class="image-preview__default-text">Foto</span>
+                    </div>
+                    <div class="imgTxt">Foto del cónyuge</div>
+                    <div class="btns-group d-block remove-on-check">
+                        <label for="cony_img" class="btn mx-0">Selecciona una foto</label>
+                    </div>
+                    <div class="invalid-feedback">Seleccione una foto</div>
+                </div> 
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="cony_apellido_pat" id="cony_apellido_pat" placeholder="Apellido paterno" class="form-control needs-validation" required>
+                            <label for="cony_apellido_pat">Apellido paterno</label>
+                            <div class="invalid-feedback">Introduzca un apellido válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="cony_apellido_mat" id="cony_apellido_mat" placeholder="Apellido materno" class="form-control needs-validation" required>
+                            <label for="cony_apellido_mat">Apellido materno</label>
+                            <div class="invalid-feedback">Introduzca un apellido válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="cony_nombres" id="cony_nombres" placeholder="Nombre(s)" class="form-control needs-validation" required>
+                    <label for="cony_nombres">Nombre(s)</label>
+                    <div class="invalid-feedback">Introduzca un nombre válido</div>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="cony_religion" id="cony_religion" placeholder="religion" class="form-control needs-validation" required>
+                    <label for="cony_religion">Religion</label>
+                    <div class="invalid-feedback">Introduzca una Religion valida</div>
+                </div>
+                <div class="row border-top">
+                    <div class="col-sm-4">
+                        <div class="form-floating">
+                            <input type="number" name="cony_cp" id="cony_cp" placeholder="Código postal" class="form-control needs-validation" required pattern=".{5,5}">
+                            <label for="cony_cp">C.P</label>
+                            <div class="invalid-feedback">Introduzca un C.P válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="form-floating">
+                            <select name="cony_entidad" id="cony_entidad" class="form-select needs-validation" required="required">
+                                <option disabled selected value="">Seleccione una opción</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="CDMX">Ciudad de México</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Michoacán">Michoacán</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
+                            </select>
+                            <label for="cony_entidad">Entidad</label>
+                            <div class="invalid-feedback">Introduzca una entidad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="cony_alcaldia" id="cony_alcaldia" placeholder="Alcaldia" class="form-control needs-validation" required>
+                            <label for="cony_alcaldia">Alcaldia</label>
+                            <div class="invalid-feedback">Introduzca una alcaldía</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="cony_colonia" id="cony_colonia" placeholder="Colonia" class="form-control needs-validation" required>
+                            <label for="cony_colonia">Colonia</label>
+                            <div class="invalid-feedback">Introduzca una colonia</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="text" name="cony_calle" id="cony_calle" placeholder="Calle" class="form-control needs-validation" required>
+                            <label for="cony_calle">Calle</label>
+                            <div class="invalid-feedback">Introduzca una calle válida</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <div class="form-floating">
+                            <input type="number" name="cony_numExt" id="cony_numExt" placeholder="Núm Ext" class="form-control needs-validation" required>
+                            <label for="cony_numExt">Núm. ext</label>
+                            <div class="invalid-feedback">Introduzca un número válido</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-3">
+                        <div class="form-floating">
+                            <input type="text" name="cony_numInt" id="cony_numInt" placeholder="Núm. Int" class="form-control needs-validation">
+                            <label for="cony_numInt">Núm. int</label>
+                            <div class="invalid-feedback">Introduzca un número válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="tel" name="cony_tel_fijo" id="cony_tel_fijo" placeholder="Tel. Fijo" class="form-control needs-validation" pattern="[0-9]{10}" maxlength="10">
+                            <label for="cony_tel_fijo">Tel. fijo</label>
+                            <div class="invalid-feedback">Introduzca un número telefónico válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-floating">
+                            <input type="tel" name="cony_tel_celular" id="cony_tel_celular" placeholder="Tel. Celular" class="form-control needs-validation" pattern="[0-9]{10}" maxlength="10" required>
+                            <label for="cony_tel_celular">Tel. celular</label>
+                            <div class="invalid-feedback">Introduzca un número telefónico válido</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating border-bottom">
+                    <input type="text" name="cony_lugar_trabajo" id="cony_lugar_trabajo" placeholder="Lugar de trabajo" class="form-control needs-validation" required>
+                    <label for="cony_lugar_trabajo">Lugar de trabajo</label>    
+                    <div class="invalid-feedback">Introduzca un lugar</div>
+                </div>
+                <div class="form-floating">
+                    <input type="text" name="cony_domicilio_trabajo" id="cony_domicilio_trabajo" placeholder="Domicilio de trabajo" class="form-control needs-validation" required>
+                    <label for="cony_domicilio_trabajo">Docicilio de trabajo</label>
+                    <div class="invalid-feedback">Introduzca una dirección</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-floating">
+                            <input type="tel" name="cony_tel_trabajo" id="cony_tel_trabajo" class="form-control needs-validation" placeholder="Tel. Trabajo" pattern="[0-9]{10}" maxlength="10" required>
+                            <label for="cony_tel_trabajo">Tel. trabajo</label>
+                            <div class="invalid-feedback">Introduzca un número telefónico válido</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-floating">
+                            <input type="number" name="cony_extension" id="cony_extension" class="form-control needs-validation" placeholder="Extensión Tel." pattern=".{5,5}">
+                            <label for="cony_extension">Extensión</label>
+                            <div class="invalid-feedback">Introduzca una extensión válida</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-group remove-on-check">
+                    <a href="#" class="btn btn-prev ms-0">Anterior</a>
+                    <a href="#" class="btn btn-nxt me-0">Siguiente</a>
+                </div>
+            </div>
+        </div>
+        <div id="btns-revision" class="btns-group d-none">
+            <a href="#" class="btn btn-prev">Modificar</a>
+            <input type="submit" value="Finalizar" class="btn" id="subButton">
+        </div>
+     </form>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+     <script src="./js/form-base.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* Estilos del HEADER */
+nav{
+    background-color: #701b45;
+}
+header{
+    padding: 0 21px;
+    background-color: #8D0E56;
+}
+
+.registro{
+    color: white;
+}
+
+/* Estilos del FOOTER */
+.footer{
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    background-color: #8D0E56;
+    padding: 21px;
+}
+
+.footer .footer-mid a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.footer .footer-mid ul{
+    padding: 0;
+    list-style: none;
+}
+
+.social-logos{
+    height: 33px;
+    padding-right: 12px;
+}
+
+/* Estilos del MAIN */
+main{
+    margin-top: 72px;
+    padding: 15px;
+}
+
+.carousel-item img{
+    height: 72vh;
+    object-fit: cover;
+}
+.carousel-caption{
+    text-align: right;
+}
+.carousel-caption a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#carouselExampleCaptions{
+    position: relative;
+}
+
+#carouselExampleCaptions .overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.main-secciones{
+    margin: 21px auto;
+}
+
+.main-secciones img{
+    width: 100%;
+}
+
+.main-secciones p{
+    font-size: 1.2rem;
+}
+

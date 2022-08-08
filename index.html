@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CENDI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="icon" href="./assets/images/logo-cendi.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+            <div class="container-fluid">
+                <a href="./index.html" class="navbar-brand">
+                  <img src="./assets/images/logo-cendi.jpg" alt="logo-cendi" class="d-inline-block align-text-top" width="30">
+                  <span class="navbar-brand mb-0 h1">CENDI</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link registro" href="./formulario.html">Registro</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./recuperaFicha.html">Recuperar ficha</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#cendis">CENDI's</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#areas">Áreas</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#ubicacion">Ubicación</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- /Header -->
+
+    <!-- MAIN -->
+    <main data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true">
+        <div class="container main-principal">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="overlay"></div>
+                    <img src="./assets/images/Cendi1.jpg" class="d-block w-100" alt="Cendi1">
+                    <div class="carousel-caption">
+                        <a href="./formulario.html"><h2>Inscripciones al Ciclo 2022-2023</h2></a>
+                      <p class="d-none d-md-block">El nuevo ciclo escolar ha comenzado, regresaremos con todas las medidas sanitarias. Completa tu registro al Ciclo 2022-2023 en cualquiera de nuestros CENDI's</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="overlay"></div>
+                    <img src="./assets/images/Cendi2.jpg" class="d-block w-100" alt="Cendi2">
+                    <div class="carousel-caption">
+                        <a href="#areas"><h2>Consulta las areas con las que contamos</h2></a>
+                      <p class="d-none d-md-block">Los CENDI's cuentan con diferentes áreas para poder brindarles la mejor atención. Conoce cuales son los servicios que tenemos disponibles</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="overlay"></div>
+                    <img src="./assets/images/Cendi3.jpg" class="d-block w-100" alt="Cendi3">
+                    <div class="carousel-caption">
+                        <a href="#"><h2>Recupera tu ficha de inscripción</h2></a>
+                      <p class="d-none d-md-block">Tu ficha de incripción es importante para completar tu proceso de incripción, recuerda llevarla el dia que te corresponde. Si ya hiciste tu registro en linea puedes consultar tu ficha aquí.</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+                
+              </div>
+        </div>
+        <div class="container main-info mt-5" id="cendis">
+          <h2 class="text-center mb-5">Centros de Desarrollo Infantil</h2>
+          <p class="text-center text-md-start fs-5">
+            Los Centros de Desarrollo Infantil (CENDI) son un servicio que brinda el Instituto Politecnico Nacional a su personal académico y administrativo en activo, de tiempo completo y medio tiempo, para la educación integral de sus hijos.
+            <br>Son un verdadero espacio formativo en donde el niño interactúa con su medio ambiente natural y social para permitir la evolución en su desarrollo, dentro de un marco afectivo que propicie desarrollar al máximo sus potencialidades para vivir en condiciones de libertad y dignidad.
+            <br>La labor educativa de los CENDI está encaminada a promover en los niños un crecimiento y maduración, en un universo de interacciones a través de las cuales construyen y asimilan el mundo que les rodea.
+          </p>
+        </div>
+        <div class="container main-secciones mt-5" id="areas">
+          <h2>Areas</h2>
+          <div class="container area-medica mt-5">
+            <h3>Área Médica</h3>
+            <div class="row">
+              <div class="col-12 col-md-4"><img src="https://elmedicointeractivo.com/wp-content/uploads/2022/01/medico-700x466.jpg" alt="Logo Area Medica"></div>
+              <div class="col align-bottom">
+                <p>
+                  La pediatría es considerada como la medicina integral del ser humano en período evolutivo, desde la concepción hasta el fin de la adolescencia, época cuya singularidad reside en el fenómeno del crecimiento, maduración, desarrollo biológico, fisiológico y social que, en cada momento, se liga a la íntima interdependencia entre el patrimonio heredado y el medio ambiente en el que el niño y el adolescente se desenvuelven y que puede ser modificado por acciones que el personal de salud realice en este período, de aquí la importancia de que dichas acciones conlleven a una mejor calidad de vida.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container area-nutricion mt-5">
+            <h3>Nutrición</h3>
+            <div class="row">
+              <div class="col-12 col-md-4"><img src="https://www.kibofoods.com.co/wp-content/uploads/2020/03/nutricion-y-la-importancia-para-la-salud.jpg" alt="Logo Area Medica"></div>
+              <div class="col align-bottom">
+                <p>
+                  La nutrición es el estudio de los alimentos y la manera en que éstos funcionan en tu cuerpo. La nutrición incluye los elementos que contiene la comida, como las vitaminas, las proteínas, las grasas y demás. <br>
+
+                  Llegados a este punto, ¿qué es la nutricion con tus propias palabras? <br>
+
+                  La nutrición es el proceso biológico en el que los organismos animales y vegetales absorben de los alimentos los nutrientes necesarios para la vida. <br>
+
+                  Mucha gente se pregunta entonces, ¿qué es la nutrición y para qué sirve? <br>
+
+                  La nutrición es el proceso biológico en el que los organismos asimilan los alimentos y los líquidos necesarios para el funcionamiento, el crecimiento y el mantenimiento de sus funciones vitales. <br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container area-odontologia mt-5">
+            <h3>Odontología</h3>
+            <div class="row">
+              <div class="col-12 col-md-4"><img src="https://www.clubratoncitoperez.es/blog/wp-content/uploads/2016/09/Odontopediatria.jpg" alt="Logo Area Medica"></div>
+              <div class="col align-bottom">
+                <p>
+                  La odontología es una de las ciencias de la salud que se encarga del diagnóstico, tratamiento y prevención de las enfermedades del aparato estomatognático, el cual incluye además de los dientes, las encías, el tejido periodontal, el maxilar superior, el maxilar inferior y la articulación temporomandibular.
+                  La Odontología es una especialidad médica que trata, previene y estudia enfermedades típicas de la cavidad oral, como lo son las caries y la gingivitis. A su vez, la Odontología contempla especialidades para trabajar padecimientos bucales específicos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container area-pedagogia mt-5">
+            <h3>Pedagogía</h3>
+            <div class="row">
+              <div class="col-12 col-md-4"><img src="https://campusdocentes.es/wp-content/uploads/2021/12/maestro-profesor.jpg" alt="Logo Area Medica"></div>
+              <div class="col align-bottom">
+                <p>
+                  La pedagogía es la ciencia que estudia la educación. El objeto principal de su estudio es la educación como un fenómeno socio-cultural, por lo que existen conocimientos de otras ciencias que ayudan a comprender el concepto de educación, como por ejemplo, la historia, la psicología, la sociología, la política.
+
+                  La pedagogía tiene la función de orientar las acciones educativas en base a ciertas prácticas, técnicas, principios y métodos. A lo largo de la historia, muchos han sido los pedagogos que se encargaron de plantear sus propias teorías sobre la pedagogía.
+
+                  La pedagogía está asociada a otra ciencia denominada andragogía, encargada de formar a las personas como humanos permanentes, teniendo en cuenta sus vivencias y experiencias sociales y culturales.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="container area-psicologia mt-5">
+            <h3>Psicología</h3>
+            <div class="row">
+              <div class="col-12 col-md-4"><img src="https://lamenteesmaravillosa.com/wp-content/uploads/2016/12/psicologa-con-un-nin%CC%83o.jpg" alt="Logo Area Medica"></div>
+              <div class="col align-bottom">
+                <p>
+                  La psicología o sicología es una ciencia social y una disciplina académica enfocadas en el análisis y la comprensión de la conducta humana y de los procesos mentales experimentados por individuos y por grupos sociales durante momentos y situaciones determinadas.
+
+                  La psicología tiene un campo de estudio vasto, ya que se centra en la mente y la experiencia humanas, desde diversas perspectivas, corrientes y metodologías. Algunas de ellas son más próximas a las ciencias duras y al empleo del método científico, mientras que otras no lo consideran apropiado para el objeto de estudio, y prefieren construir métodos y abordajes propios.  
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container main-cendis mt-5 mb-5" id="ubicacion">
+          <div class="row">
+            <div class="col text-center">
+              <h2>Ubicación</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.0958667323825!2d-99.1387853850114!3d19.494510886849167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f9b05a9be25b%3A0xbd2a9065db8df07f!2sCENDI%20Amalia%20Solorzano!5e0!3m2!1sen!2smx!4v1654719126071!5m2!1sen!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col">
+              <p>
+                <h5>CENDI Amalia Solorzano</h5>
+                07300, Oroya 760a, Lindavista, Gustavo A. Madero, Ciudad de México, CDMX
+              </p>
+              <p>
+                <h5>CENDI Clementina Batalla de Bassols</h5>
+                Sierravista 428, Lindavista, Gustavo A. Madero, 07300 Ciudad de México, CDMX
+              </p>
+              <p>
+                <h5>CENDI Eva Sámano de López Mateos</h5>
+                Av. José Loreto Fabela s/n, San Juan de Aragón II Secc, Gustavo A. Madero, 07979 Ciudad de México, CDMX
+              </p>
+              <p>
+                <h5>CENDI Laura Pérez de Bátiz</h5>
+                Plan de Agua Prieta 99, Plutarco Elías Calles, Miguel Hidalgo, 11350 Ciudad de México, CDMX
+              </p>
+              <p>
+                <h5>CENDI Laura Pérez de Bátiz</h5>
+                Plan de Agua Prieta 99, Plutarco Elías Calles, Miguel Hidalgo, 11350 Ciudad de México, CDMX
+              </p>
+              <p>
+                <h5>CENDI Margarita Salazar de Erro</h5>
+                Prolongación Carpio & Plan de San Luis, Casco de Santo Tomás, Miguel Hidalgo, 11340 Ciudad de México, CDMX
+              </p>
+            </div>
+          </div>
+          
+        </div>
+    </main>
+    <!-- /main -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-9 col-md-3 footer-left">
+                    <a href="https://www.ipn.mx/">
+                        <img src="https://www.escom.ipn.mx/images/logoSEP.png" alt="ipn-logo" width="100%">
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 footer-mid">
+                    <ul>
+                        <li><a href="https://www.gob.mx/terminos#medidas-seguridad-informacion">Privacidad</a></li>
+                        <li><a href="https://www.gob.mx/terminos#medidas-seguridad-informacion">Terminos y condiciones</a></li>
+                        <li><a href="https://www.gob.mx/terminos#medidas-seguridad-informacion">Mapa del sitio</a></li>
+                        <li><a href="https://github.com/Demian-1/tecWebProject">Contacto</a></li>
+                        <li><a href="./CRUD.html" style="color:#8D0E56;">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 footer-right">
+                    <span><img src="https://cdn-icons-png.flaticon.com/512/174/174876.png" alt="twitter-logo" class="social-logos"></span>
+                    <span><img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="facebook-logo" class="social-logos"></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
